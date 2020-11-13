@@ -6,10 +6,19 @@ namespace SignalBehaviours
     {
         
         [SerializeField]
+        private string _name;
+        
+        [SerializeField]
         private SignalImpact[] _impactList;
 
         private int _selectedIndex = -1;
 
+
+        public string Name => _name;
+
+        public SignalImpact[] ImpactList => _impactList;
+        
+        
         public void Select(int index)
         {
             if (index >= _impactList.Length)

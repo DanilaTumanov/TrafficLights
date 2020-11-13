@@ -8,9 +8,14 @@ namespace SignalBehaviours
     public class SignalImpact
     {
 
+        [SerializeField]
+        private string _name;
+        
         [SerializeField] 
         private SignalTransmission[] _signalTransmissions;
-        
+
+
+        public string Name => _name;
         
         public void Start()
         {
