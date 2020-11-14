@@ -2,6 +2,11 @@
 
 namespace SignalBehaviours
 {
+    
+    /// <summary>
+    /// Приемник сигнала,
+    /// содержит хуки для удобного отслеживания подачи и снятия сигнала
+    /// </summary>
     public abstract class SignalAcceptor : MonoBehaviour
     {
 
@@ -30,10 +35,19 @@ namespace SignalBehaviours
         }
 
 
+        /// <summary>
+        /// Срабатывает при подаче сигнала
+        /// </summary>
         protected virtual void OnSignalSet() {}
         
+        /// <summary>
+        /// Срабатывает при снятии сигнала
+        /// </summary>
         protected virtual void OnSignalRemove() {}
         
+        /// <summary>
+        /// Сброс состояния приемника (автоматически вызывается на старте)
+        /// </summary>
         protected abstract void Reset();
 
     }

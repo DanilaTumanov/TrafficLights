@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 namespace UI.IndexSelector
 {
+    
+    /// <summary>
+    /// Кнопка с возможностью установки имени и соответствующего ему индекса
+    /// При нажатии возвращает индекс
+    /// </summary>
     [RequireComponent(typeof(Button))]
     public class SelectorButton : MonoBehaviour
     {

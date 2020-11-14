@@ -5,6 +5,11 @@ using UnityEngine;
 
 namespace UI.Controllers
 {
+    
+    /// <summary>
+    /// Контроллер HUD,
+    /// Реализует API для взаимодействия с пользователем
+    /// </summary>
     public class HUDController : MonoBehaviour
     {
 

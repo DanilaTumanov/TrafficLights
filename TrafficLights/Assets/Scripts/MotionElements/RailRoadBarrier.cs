@@ -4,6 +4,12 @@ using UnityEngine;
 
 namespace MotionElements
 {
+    
+    /// <summary>
+    /// Шлагбаум железнодорожного переезда,
+    /// управляется постоянным сигналом,
+    /// реагирует только на подачу и снятие сигнала
+    /// </summary>
     public class RailRoadBarrier : SignalAcceptor
     {
         [SerializeField]

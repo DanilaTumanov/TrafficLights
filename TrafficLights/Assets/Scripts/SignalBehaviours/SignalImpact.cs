@@ -4,6 +4,11 @@ using UnityEngine;
 namespace SignalBehaviours
 {
     
+    /// <summary>
+    /// Воздействие на объект, на основе сигналов,
+    /// запускает одновременую передачу нескольких сигналов к разным приемникам,
+    /// на основании настроек в инспекторе
+    /// </summary>
     [Serializable]
     public class SignalImpact
     {
@@ -17,6 +22,9 @@ namespace SignalBehaviours
 
         public string Name => _name;
         
+        /// <summary>
+        /// Применить воздействие
+        /// </summary>
         public void Start()
         {
             foreach (var signalTransmission in _signalTransmissions)
@@ -25,6 +33,9 @@ namespace SignalBehaviours
             }
         }
 
+        /// <summary>
+        /// Остановить воздействие
+        /// </summary>
         public void Stop()
         {
             foreach (var signalTransmission in _signalTransmissions)

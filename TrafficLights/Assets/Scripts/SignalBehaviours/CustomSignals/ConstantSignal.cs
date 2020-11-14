@@ -1,8 +1,11 @@
-﻿    using UnityEngine;
+﻿using UnityEngine;
 
-    namespace SignalBehaviours.CustomSignals
+namespace SignalBehaviours.CustomSignals
 {
     
+    /// <summary>
+    /// Постоянный сигнал, всегда возвращает 1
+    /// </summary>
     [CreateAssetMenu(fileName = "ConstantSignal", menuName = "Signal/ConstantSignal")]
     public class ConstantSignal : Signal
     {

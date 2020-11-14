@@ -2,6 +2,10 @@
 
 namespace SignalBehaviours
 {
+    
+    /// <summary>
+    /// Выбирает воздействие, основываясь на индексе в списке
+    /// </summary>
     public class ImpactSelector : MonoBehaviour
     {
         

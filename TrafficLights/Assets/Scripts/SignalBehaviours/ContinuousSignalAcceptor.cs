@@ -3,6 +3,11 @@ using UnityEngine;
 
 namespace SignalBehaviours
 {
+    
+    /// <summary>
+    /// Приемник сигнала, изменяющегося во времени,
+    /// содержит хук для удобной обработки значения сигнала
+    /// </summary>
     public abstract class ContinuousSignalAcceptor : SignalAcceptor
     {
         private void Update()

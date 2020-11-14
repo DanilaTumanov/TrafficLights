@@ -2,7 +2,10 @@
 
 namespace SignalBehaviours.CustomSignals
 {
-    
+ 
+    /// <summary>
+    /// Нормализованный прямоугольный сигнал (меандр)
+    /// </summary>
     [CreateAssetMenu(fileName = "SquareWaveSignal", menuName = "Signal/SquareWaveSignal")]
     public class SquareWaveSignal : Signal
     {

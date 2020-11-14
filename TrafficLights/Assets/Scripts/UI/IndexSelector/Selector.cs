@@ -3,6 +3,12 @@ using UnityEngine;
 
 namespace UI.IndexSelector
 {
+    
+    /// <summary>
+    /// UI элемент, создающий на основании массива имен набор кнопок,
+    /// при нажатии на каждую из которых, будет сгенерировано событие
+    /// выбора с индексом выбранного элемента
+    /// </summary>
     public class Selector : MonoBehaviour
     {
 

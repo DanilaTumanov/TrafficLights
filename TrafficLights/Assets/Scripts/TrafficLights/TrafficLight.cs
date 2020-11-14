@@ -5,6 +5,10 @@ using UnityEngine;
 
 namespace TrafficLights
 {
+    
+    /// <summary>
+    /// Светофорный световой сигнал (одна лампа)
+    /// </summary>
     public class TrafficLight : ContinuousSignalAcceptor
     {
         private static readonly Color DISABLED_COLOR = Color.black;

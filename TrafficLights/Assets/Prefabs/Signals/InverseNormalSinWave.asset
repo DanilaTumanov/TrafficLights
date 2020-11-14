@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: InverseNormalSinWave
   m_EditorClassIdentifier: 
   _frequency: 1
-  _offsetPeriod: 0.5
+  _offset: 0.5
