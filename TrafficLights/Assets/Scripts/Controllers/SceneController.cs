@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Selectors;
+using Selectors.CustomSelectors;
 using SignalBehaviours;
 using UI.Controllers;
 using UnityEngine;
@@ -21,6 +23,9 @@ namespace Controllers
         private HUDController _hudController;
 
         [SerializeField]
+        private SelectionController _selectionController;
+
+        [SerializeField]
         private List<ImpactSelector> _trafficLights;
 
 
@@ -38,7 +43,8 @@ namespace Controllers
             _trafficLights.ForEach(tl => tl.gameObject.SetActive(false));
 
             _hudController.OnLightSelected += TrafficLightSelectHandler;
-            _hudController.OnImpactSelected += ImpactSelectHandler;
+            
+            _selectionController.SetSelectionSource(_hudController.ImpactSelectionSource);
         }
 
         private void TrafficLightSelectHandler(int index)
@@ -52,16 +58,13 @@ namespace Controllers
             _activeTrafficLights.gameObject.SetActive(true);
             _activeTrafficLights.Reset();
             
+            _selectionController.SetSelector(_activeTrafficLights);
+            
             _hudController.SetImpacts(
             _activeTrafficLights.ImpactList
                 .Select(impact => impact.Name)
                 .ToArray()
             );
-        }
-
-        private void ImpactSelectHandler(int index)
-        {
-            _activeTrafficLights.Select(index);
         }
     }
 }

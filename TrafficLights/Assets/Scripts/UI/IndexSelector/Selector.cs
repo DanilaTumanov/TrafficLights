@@ -1,4 +1,5 @@
 ﻿using System;
+using Selectors;
 using UnityEngine;
 
 namespace UI.IndexSelector
@@ -9,7 +10,7 @@ namespace UI.IndexSelector
     /// при нажатии на каждую из которых, будет сгенерировано событие
     /// выбора с индексом выбранного элемента
     /// </summary>
-    public class Selector : MonoBehaviour
+    public class Selector : MonoBehaviour, ISelectionSource
     {
 
         [SerializeField]
@@ -22,7 +23,7 @@ namespace UI.IndexSelector
         private string[] _names;
 
 
-        public event Action<int, string> OnSelect;
+        public event Action<int> OnSelect;
         
         
         public void Reset(string[] names)
@@ -44,7 +45,7 @@ namespace UI.IndexSelector
 
         private void SelectHandler(int index)
         {
-            OnSelect?.Invoke(index, _names[index]);
+            OnSelect?.Invoke(index);
         }
         
     }

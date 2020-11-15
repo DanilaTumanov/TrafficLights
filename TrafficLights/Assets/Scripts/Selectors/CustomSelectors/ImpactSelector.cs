@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using Impacts.CustomImpacts;
+using UnityEngine;
 
-namespace SignalBehaviours
+namespace Selectors.CustomSelectors
 {
     
     /// <summary>
-    /// Выбирает воздействие, основываясь на индексе в списке
+    /// Запускает воздействие, основываясь на индексе в списке
     /// </summary>
-    public class ImpactSelector : MonoBehaviour
+    public class ImpactSelector : MonoBehaviour, ISelector
     {
         
         [SerializeField]

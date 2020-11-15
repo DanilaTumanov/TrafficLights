@@ -1,7 +1,8 @@
 ﻿using System;
+using SignalBehaviours;
 using UnityEngine;
 
-namespace SignalBehaviours
+namespace Impacts
 {
     
     /// <summary>
@@ -9,7 +10,7 @@ namespace SignalBehaviours
     /// При запуске делает ровно то, что следует из названия :)
     /// </summary>
     [Serializable]
-    public class SignalTransmission
+    public class SignalTransmission : IImpactAction
     {
         [SerializeField]
         private string _name;

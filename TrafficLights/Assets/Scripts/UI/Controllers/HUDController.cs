@@ -1,4 +1,5 @@
 ﻿using System;
+using Selectors;
 using TMPro;
 using UI.IndexSelector;
 using UnityEngine;
@@ -26,6 +27,13 @@ namespace UI.Controllers
         private TMP_Text _selectedModeName;
 
 
+        private string[] _lightsNames;
+        private string[] _impactsNames;
+
+
+        public ISelectionSource ImpactSelectionSource => _impactSelector;
+        
+        
         public event Action<int> OnLightSelected;
         public event Action<int> OnImpactSelected;
 
@@ -42,26 +50,28 @@ namespace UI.Controllers
 
         public void SetLights(string[] names)
         {
+            _lightsNames = names;
             _lightSelector.Reset(names);
         }
 
         public void SetImpacts(string[] names)
         {
+            _impactsNames = names;
             _impactSelector.Reset(names);
         }
 
 
-        private void LightSelectHandler(int index, string name)
+        private void LightSelectHandler(int index)
         {
             OnLightSelected?.Invoke(index);
-            _selectedTrafficLightsName.text = name;
+            _selectedTrafficLightsName.text = _lightsNames[index];
             _selectedModeName.text = String.Empty;
         }
 
-        private void ImpactSelectHandler(int index, string name)
+        private void ImpactSelectHandler(int index)
         {
             OnImpactSelected?.Invoke(index);
-            _selectedModeName.text = name;
+            _selectedModeName.text = _impactsNames[index];
         }
         
     }
