@@ -33,7 +33,6 @@
         
         half _Glossiness;
         half _Metallic;
-        //fixed4 _Color;
 
         fixed _ExtrudePower;
 
@@ -74,11 +73,11 @@
         
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            fixed4 c = _Color;
+            fixed4 c = UNITY_ACCESS_INSTANCED_PROP(Props, _Color);
             
             o.Albedo = 0;
             o.Emission = lerp(0, c.rgb, pow(max(0, IN.height), .5));
-            // Metallic and smoothness come from slider variables
+            
             o.Metallic = 0;
             o.Smoothness = 0;
             o.Alpha = c.a;
